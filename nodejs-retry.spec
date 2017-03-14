@@ -3,11 +3,11 @@
 %{?nodejs_find_provides_and_requires}
 
 Name:           %{?scl_prefix}nodejs-retry
-Version:        0.9.0
+Version:        0.10.1
 Release:        1%{?dist}
 Summary:        Retry strategies for failed operations
 BuildArch:      noarch
-
+ExclusiveArch:  %{nodejs_arches} noarch
 License:        MIT
 URL:            https://github.com/felixge/node-retry
 Source0:        http://registry.npmjs.org/retry/-/retry-%{version}.tgz
@@ -35,6 +35,9 @@ cp -pr package.json index.js lib %{buildroot}%{nodejs_sitelib}/retry
 %doc License README.md equation.gif example
 
 %changelog
+* Thu Jan 05 2017 Zuzana Svetlikova <zsvetlik@redhat.com> - 0.10.1-1
+- Updated with script
+
 * Thu Sep 15 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 0.9.0-1
 - Updated with script
 
